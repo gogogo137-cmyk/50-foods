@@ -873,6 +873,17 @@ for _item in DELICACIES:
     if 1 <= _id <= 20:
         _item["image"] = "/images/food-{}.jpg".format(_id)
 
+# 確保每筆都有 image_alt（Accessibility / SEO）
+for _item in DELICACIES:
+    if not _item.get("image_alt"):
+        name = _item.get("name") or _item.get("name_en") or "food"
+        # 中文＋英文描述為 alt
+        en = _item.get("name_en")
+        if en and en.lower() not in name.lower():
+            _item["image_alt"] = f"{name} ({en}) 圖片"
+        else:
+            _item["image_alt"] = f"{name} 圖片"
+
 NIGHT_MARKETS = [
     {
         "id": 1,
