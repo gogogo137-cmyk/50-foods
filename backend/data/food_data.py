@@ -871,7 +871,7 @@ for _item in DELICACIES:
     except Exception:
         _id = 0
     if 1 <= _id <= 20:
-        _item["image"] = "/images/food-{}.jpg".format(_id)
+        _item["image"] = "/images/food-{}.webp".format(_id)
 
 # 確保每筆都有 image_alt（Accessibility / SEO）
 for _item in DELICACIES:
