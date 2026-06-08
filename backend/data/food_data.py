@@ -864,6 +864,15 @@ for _item in DELICACIES:
         # 使用無需 API key 的 Source endpoint，解析度為 800x600
         _item["image"] = f"https://source.unsplash.com/800x600/?{q}"
 
+# 若已在 repo 中加入本地示範圖片，則以本地圖片覆寫前 20 項的 image 欄位
+for _item in DELICACIES:
+    try:
+        _id = int(_item.get("id", 0))
+    except Exception:
+        _id = 0
+    if 1 <= _id <= 20:
+        _item["image"] = "/images/food-{}.jpg".format(_id)
+
 NIGHT_MARKETS = [
     {
         "id": 1,
