@@ -854,6 +854,16 @@ DELICACIES = [
     },
 ]
 
+# 若資料中未提供 `image` 欄位，則自動產生代表性圖片 URL（使用 Unsplash Source）
+import urllib.parse
+
+for _item in DELICACIES:
+    if not _item.get("image"):
+        # 以 name 為關鍵字搜尋圖片，使用 URL encode
+        q = urllib.parse.quote_plus(_item.get("name", _item.get("name_en", "food")))
+        # 使用無需 API key 的 Source endpoint，解析度為 800x600
+        _item["image"] = f"https://source.unsplash.com/800x600/?{q}"
+
 NIGHT_MARKETS = [
     {
         "id": 1,
