@@ -8,12 +8,19 @@ import Image from "next/image";
 function FoodCard({ food }) {
   return (
     <Link href={`/foods/${food.id}`} className={styles.card}>
-      <div>
-        <h3>{food.name}</h3>
-        <p className={styles.meta}>{food.category} • {food.region}</p>
+      <div className={styles.cardLeft}>
+        <div className={styles.emoji}>{food.emoji || '🍽️'}</div>
+        <div>
+          <h3 className={styles.title}>{food.name}</h3>
+          <p className={styles.meta}>{food.category} • {food.region}</p>
+          <p className={styles.excerpt}>{(food.description || '').slice(0, 60)}{(food.description||'').length>60? '…':''}</p>
+        </div>
       </div>
-      <div>
-        <Image src={food.image || "/favicon.ico"} alt={food.name} width={80} height={60} />
+      <div className={styles.cardRight}>
+        <div className={styles.stats}>
+          <span className={styles.cal}>{food.calories} kcal</span>
+          <span className={styles.sat}>⭐ {food.satisfaction}</span>
+        </div>
       </div>
     </Link>
   );

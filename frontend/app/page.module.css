@@ -199,3 +199,66 @@ a.secondary {
   color: #666;
   font-size: 13px;
 }
+
+.title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.excerpt {
+  margin: 6px 0 0 0;
+  color: #666;
+  font-size: 13px;
+}
+
+.cardLeft {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.emoji {
+  font-size: 34px;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fff, #f7f7f7);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.cardRight {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:6px;
+}
+
+.stats {
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.cal { color:#777; font-size:13px }
+.sat { background: #ffefc2; padding:4px 8px; border-radius:999px; font-weight:600 }
+
+/* Card hover */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border-color: rgba(0,0,0,0.06);
+}
+
+/* Header */
+.main h1 { margin: 0; font-size: 32px }
+
+/* small screens */
+@media (max-width: 600px) {
+  .card { padding: 10px }
+  .title { font-size: 16px }
+  .emoji { font-size: 28px }
+  .cardRight { align-items: flex-start }
+}
