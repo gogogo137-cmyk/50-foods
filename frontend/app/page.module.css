@@ -229,6 +229,14 @@ a.secondary {
   box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
+.thumb {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
 .cardRight {
   display:flex;
   flex-direction:column;

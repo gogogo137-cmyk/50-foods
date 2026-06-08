@@ -17,6 +17,15 @@ function FoodCard({ food }) {
         </div>
       </div>
       <div className={styles.cardRight}>
+        <div>
+          <img
+            src={food.image || `https://picsum.photos/seed/food${food.id}/400/300`}
+            alt={food.name}
+            className={styles.thumb}
+            width={120}
+            height={80}
+          />
+        </div>
         <div className={styles.stats}>
           <span className={styles.cal}>{food.calories} kcal</span>
           <span className={styles.sat}>⭐ {food.satisfaction}</span>
